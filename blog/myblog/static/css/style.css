@@ -1,0 +1,49 @@
+.home-slider {
+  padding: 0;
+  /* max-width: 1200px; */
+}
+.home-slider h5 {
+  font-size: 3rem;
+}
+.home-slider p {
+  font-size: 1.5rem;
+}
+.carousel-caption {
+  bottom: 33%;
+}
+.carousel-item {
+  height: 25rem;
+  background-color: #000000;
+}
+.carousel-item img {
+  opacity: 30%;
+  /* border-radius: 26px; */
+}
+
+.my-col {
+  margin: 16px 0;
+  padding: 8px;
+  font-size: 20px;
+  background: #32302f;
+  border: 2px solid #232323;
+  text-align: center;
+}
+
+.form-signin,
+.form-signup {
+  width: 100%;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signup {
+  max-width: 620px;
+}
+.form-signin {
+  max-width: 420px;
+}
+
+footer {
+  width: 100%;
+  padding: 32px;
+  background-color: #232323;
+}

@@ -1,0 +1,42 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark shadow-md">
+    <a class="navbar-brand" href="https://python.org">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" width="30" height="30"
+            alt="logo" />
+    </a>
+    <a class="navbar-brand" href="https://nuxtjs.org">
+        <img src="https://www.vectorlogo.zone/logos/nuxtjs/nuxtjs-icon.svg" width="30" height="30"
+            alt="logo" />
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'index' %}">Главная<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}">Контакты</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0" method="get" action="{% url 'search' %}">
+            <input class="form-control mr-sm-2" name="q" type="search" placeholder="Поиск" aria-label="Поиск" />
+            <button class="btn btn-outline-success my-2 my-sm-0 mr-2" type="submit">
+                Поиск
+            </button>
+        </form>
+        {% if user.is_authenticated %}
+            <span class="navbar-text ml-4 mr-4">{{ user }}</span>
+            {% if user.is_superuser %}
+                <a href="/admin" class="btn btn-outline-info mr-2">Панель Администратора</a>
+            {% endif %}
+            <a href="{% url 'signout' %}" class="btn btn-outline-danger mr-2">Выход</a>
+        {% else %}
+            <a href="{% url 'signin' %}" class="btn btn-outline-dark mr-2">Вход</a>
+            <a href="{% url 'signup' %}" class="btn btn-outline-dark mr-2">Регистрация</a>
+        {% endif %}
+    </div>
+</nav>
